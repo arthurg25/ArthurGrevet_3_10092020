@@ -3,20 +3,23 @@
 	<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" type="text/css" href="sass/style.css">
+    <link rel="stylesheet" type="text/css" href="sass/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <title>OhMyFood</title>
     <script src="https://kit.fontawesome.com/7cfecc5119.js" crossorigin="anonymous"></script>
 	</head>
 	<body>
     <header>
-      <img src="image/logo/logo.png" alt="logo OhMyFood">
+      <div class="container-header"><img class="logo-top" src="image/logo/logo.png" alt="logo ohmyfood"></div>
     </header>
+
     <section>
       <div><i class="fas fa-map-marker-alt"></i> Paris, Belville</div>
       <h1>Réserver le menu qui vous convient</h1>
       <p>Découvrez des restaurant d'exception sélectionn par nos soins</p>
-      <button class="btn-1">Explorer nos restaurants</button>
+      <button class="bnt-main">Explorer nos restaurants</button>
     </section>
+
     <section>
       <h2>Fonctionnement</h2>
       <ul>
@@ -25,61 +28,69 @@
         <li><i class="fas fa-store"></i > Dégustez au restaurant</li>
       </ul>
     </section>
+
     <section>
       <h2>Restaurants</h2>
       <a href="page/menu-la_palette_du_goût.html">
         <div class="btn-img">
-         <img src="image/photo/pal.jpg" alt="Photo La palette du goût">
-         <h3>La palette du goût</h3>
-        <p>Ménilmontant</p>
+          <img src="image/photo/pall.jpg" alt="Photo La palette du goût">
+          <h3 class="btn-img_nom">La palette du goût</h3>
+          <p class="btn-img_ville">Ménilmontant</p>
         <div>
           <i class="coeur1 far fa-heart"></i>
           <i class="coeur2 far fa-heart"></i>
         </div>
-        <p>Nouveau</p>
-      </div>
+        <div>Nouveau</div>
+        </div>
       </a>
-    <a href="page/menu-la_note_enchantée.html">
-      <div class="btn-img">
-        <img src="image/photo/note.jpg" alt="La note enchantée">
-        <h3>La note enchantée</h3>
-        <p>Charonne</p>
-        <div>
-          <i class="coeur1 far fa-heart"></i>
-          <i class="coeur2 far fa-heart"></i>
+      <a href="page/menu-la_note_enchantée.html">
+        <div class="btn-img">
+          <img src="image/photo/notee.jpg" alt="La note enchantée">
+          <h3 class="btn-img_nom">La note enchantée</h3>
+          <p class="btn-img_ville">Charonne</p>
+          <div>
+            <i class="coeur1 far fa-heart"></i>
+            <i class="coeur2 far fa-heart"></i>
+          </div>
+          <div>Nouveau</div>
         </div>
-        <p>Nouveau</p>
-      </div>
-    </a>
-    <a href="page/menu-a_la_française.html">
-      <div class="btn-img">
-        <img src="image/photo/fran.jpg" alt="À la française"> 
-        <h3>À la française</h3>
-        <p>Cité Rouge</p>
-        <div>
-          <i class="coeur1 far fa-heart"></i>
-          <i class="coeur2 far fa-heart"></i>
+      </a>
+      <a href="page/menu-a_la_française.html">
+        <div class="btn-img">
+          <img src="image/photo/frann.jpg" alt="À la française"> 
+          <h3 class="btn-img_nom">À la française</h3>
+          <p class="btn-img_ville">Cité Rouge</p>
+          <div>
+            <i class="coeur1 far fa-heart"></i>
+            <i class="coeur2 far fa-heart"></i>
+          </div>
         </div>
-      </div>
-    </a>
-    <a href="page/menu-le_délice_des_sens.html">
-      <div class="btn-img">
-        <img src="image/photo/déli.jpg" alt="Le délice des sens">
-        <h3>Le délice des sens</h3>
-        <p>Folie-Méricout</p>
-        <div>
-          <i class="coeur1 far fa-heart"></i>
-          <i class="coeur2 far fa-heart"></i>
+      </a>
+      <a href="page/menu-le_délice_des_sens.html">
+        <div class="btn-img">
+          <img src="image/photo/délii.jpg" alt="Le délice des sens">
+          <h3 class="btn-img_nom">Le délice des sens</h3>
+          <p class="btn-img_ville">Folie-Méricout</p>
+          <div>
+            <i class="coeur1 far fa-heart"></i>
+            <i class="coeur2 far fa-heart"></i>
+          </div>
         </div>
-      </div>
-    </a>
+      </a>
     </section>
+
     <footer>
-      <p>OhMyFood</p>
-      <p>Proposer un restaurant</p>
-      <p>Devenir partenaire</p>
-      <p>Mentions légales</p> 
-      <p>Contact</p>
+      <div class="logo"><img src="image/logo/ohmyfood@2x.svg" alt="logo ohmyfood"></div>
+      <div class="footer-menu">
+          <div class="footer-line">
+              <i class="fas fa-utensils"></i><a href="#">Proposer un restaurant</a>
+          </div>
+          <div class="footer-line">
+              <i class="fas fa-hands-helping"></i><a href="#">Devenir Partenaire</a>
+          </div>
+          <div class="footer-line"><a href="#">Mentions légales</a></div>
+          <div class="footer-line"><a href="mail@ohmyfood.com">Contact</a></div>
+      </div>
     </footer>
 	</body>
 </html>

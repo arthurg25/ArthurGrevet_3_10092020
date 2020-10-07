@@ -3,25 +3,29 @@
 	<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" type="text/css" href="sass/style.css">
+		<link rel="stylesheet" type="text/css" href="../sass/style.css">
     <title>OhMyFood</title>
     <script src="https://kit.fontawesome.com/7cfecc5119.js" crossorigin="anonymous"></script>
 	</head>
 	<body>
     <header>
-      <a href="../index.html">
-        <div class="btn-back"><i class="fas fa-arrow-left"></i></div>
-      </a>
-      <img src="../image/logo/logo.png" alt="logo OhMyFood">
+      <div class="container-header">
+          <a href="../index.html">
+              <div class="bt-back"><i class="fas fa-arrow-left"></i></div>
+          </a>
+          <img class="logo-top" src="../image/logo/logo.png" alt="logo ohmyfood">
+      </div>
     </header>
+
     <div>
       <img src="../image/photo/pal.jpg" alt="Photo La palette du goût">
-      <h1>La Palette du goût</h1>
+      <h1>La palette du goût</h1>
       <div>
         <i class="coeur1 far fa-heart"></i>
         <i class="coeur2 far fa-heart"></i>
       </div>
     </div>
+
     <section>
       <h1>Entrées</h1>
       <div>
@@ -46,6 +50,7 @@
         </div>
       </div>
     </section>
+
     <section>
       <h1>Plats</h1>
       <div>
@@ -70,6 +75,7 @@
         </div>
       </div>
     </section>
+
     <section>
       <h1>Désserts</h1>
       <div>
@@ -94,15 +100,23 @@
         </div>
       </div>
     </section>
+
     <div>
       <button class="btn-1">Commander</button>
     </div>
+
     <footer>
-      <p>OhMyFood</p>
-      <p>Proposer un restaurant</p>
-      <p>Devenir partenaire</p>
-      <p>Mentions légales</p> 
-      <p>Contact</p>
+      <div class="logo"><img src="../image/logo/ohmyfood@2x.svg" alt="logo ohmyfood"></div>
+      <div class="footer-menu">
+          <div class="footer-line">
+              <i class="fas fa-utensils"></i><a href="#">Proposer un restaurant</a>
+          </div>
+          <div class="footer-line">
+              <i class="fas fa-hands-helping"></i><a href="#">Devenir Partenaire</a>
+          </div>
+          <div class="footer-line"><a href="#">Mentions légales</a></div>
+          <div class="footer-line"><a href="mail@ohmyfood.com">Contact</a></div>
+      </div>
     </footer>
 	</body>
 </html>
