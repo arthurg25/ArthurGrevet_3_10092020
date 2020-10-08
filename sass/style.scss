@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900');
+
 $colour-primary: #9356DC;
 $colour-secondary: #FF79DA;
 $colour-tertiary: #99E2D0;
@@ -10,6 +12,7 @@ $colour-text1: #000;
 body {
   margin: auto;
   font-family: 'Roboto', sans-serif;
+  color: $colour-text1;
   font-size: 16px;
 }
 
@@ -24,6 +27,40 @@ body {
   .logo-top {
       width: 166px;
       margin: auto;
+  }
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin: 0 0 40px 0;
+  text-align: center;
+}
+
+h2 {
+  font-family: 'Roboto', sans-serif;
+  color: $colour-text1;
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin: 50px 0 30px 30px;
+  text-align: left;
+}
+
+h4 {
+  font-family: cursive;
+  color: $colour-text1;
+  font-weight: 400;
+  font-size: 1.75rem;
+  margin: 0;
+  text-align: left;
+}
+
+a {
+  &:visited,
+  &:link,
+  &:active {
+      text-decoration: none;
+      color: $colour-text1; 
   }
 }
 
@@ -49,9 +86,17 @@ footer {
       margin-right: 10px;
       font-size: 0.9rem;
   }
-  
-  a {
-    text-decoration: none;
-    color: white; /*par exemple*/
-   }
+}
+
+footer a {
+  &:visited,
+  &:link,
+  &:active {
+      text-decoration: none;
+      color: $colour-background1;
+  }
+}
+
+footer a:hover {
+  color: $colour-tertiary;
 }
