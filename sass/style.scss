@@ -9,6 +9,9 @@ $colour-background3: #EAEAEA;
 $colour-background4: #353535;
 $colour-text1: #000;
 
+// cercle violet index
+$circle-diam:24px;
+
 body {
   margin: auto;
   font-family: 'Roboto', sans-serif;
@@ -30,6 +33,101 @@ body {
   }
 }
 
+.localisation {
+  font-size: 1rem;
+  color: $colour-text1;
+  height: 50px;
+  background-color: $colour-background3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  i {
+      margin-right: 10px;
+  }
+}
+
+.container {
+  background-color: $colour-background2;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  > div {
+      text-align: center;
+      font-weight: 300;
+      font-size: 1.125rem;
+      margin-bottom: 30px;
+  }
+}
+
+.operation-container {
+  background-color: $colour-background1;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .choice {
+      width: 336px;
+      height: 74px;
+      background: $colour-background2;
+      border-radius: 20px;
+      margin-bottom: 24px;
+      font-weight: 500;
+      display: flex;
+      flex-direction: row;
+      justify-content: left;
+      align-items: center;
+
+      &--pink {
+          background: lighten($colour-primary, 35%);
+      }
+
+      i {
+          padding: 0 18px 0 30px;
+
+      }
+
+      &:nth-child(1) i {
+          font-size: 1.2rem;
+      }
+
+
+      .circle-num {
+          width: $circle-diam;
+          height: $circle-diam;
+          position: relative;
+          left: ($circle-diam/2)*-1;
+
+
+          .circle {
+              width: $circle-diam;
+              height: $circle-diam;
+              background-color: $colour-primary;
+              z-index: 4;
+              position: absolute;
+              border-radius: 50%;
+          }
+
+          .number {
+              color: $colour-background1;
+              z-index: 5;
+              position: absolute;
+              width: $circle-diam;
+              height: $circle-diam;
+              font-weight: 400;
+              font-size: 0.85rem;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+
+          }
+      }
+  }
+}
+
 h1 {
   font-weight: 600;
   font-size: 1.5rem;
@@ -38,7 +136,6 @@ h1 {
 }
 
 h2 {
-  font-family: 'Roboto', sans-serif;
   color: $colour-text1;
   font-weight: 600;
   font-size: 1.5rem;
