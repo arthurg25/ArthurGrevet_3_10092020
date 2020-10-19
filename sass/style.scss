@@ -12,6 +12,9 @@ $colour-text1: #000;
 // cercle violet index
 $circle-diam:24px;
 
+$duree-fav: 250ms;
+$heart-size: 24px;
+
 body {
   margin: auto;
   font-family: 'Roboto', sans-serif;
@@ -21,23 +24,23 @@ body {
 
 h1 {
   font-weight: 600;
+  text-align: center;
   font-size: 1.5rem;
   margin: 0 0 40px 0;
-  text-align: center;
 }
 
 h2 {
-  color: $colour-text1;
+  text-align: left;
   font-weight: 600;
   font-size: 1.5rem;
   margin: 50px 0 30px 30px;
-  text-align: left;
+  color: $colour-text1;
 }
 
 h4 {
   font-family: cursive;
   color: $colour-text1;
-  font-weight: 400;
+  font-weight: 390;
   font-size: 1.75rem;
   margin: 0;
   text-align: left;
@@ -53,27 +56,27 @@ a {
 }
 
 .container-header {
+  display: flex;
+  position: relative;
+  justify-items: center;
   width: 100%;
   height: 62px;
-  display: flex;
-  justify-items: center;
   background-color: $colour-background1;
-  position: relative;
 
   .logo-top {
-    width: 166px;
+    width: 170px;
     margin: auto;
   }
 }
 
 .localisation {
-  font-size: 1rem;
-  color: $colour-text1;
-  height: 50px;
-  background-color: $colour-background3;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 1rem;
+  height: 50px;
+  background-color: $colour-background3;
+  color: $colour-text1;
 
   i {
     margin-right: 10px;
@@ -81,11 +84,11 @@ a {
 }
 
 .container {
-  background-color: $colour-background2;
-  padding: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 40px;
+  background-color: $colour-background2;
 
   > div {
     text-align: center;
@@ -96,30 +99,30 @@ a {
 }
 
 .operation-container {
-  background-color: $colour-background1;
-  margin: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 20px;
+  background-color: $colour-background1;
 
   .choice {
-    width: 336px;
-    height: 74px;
-    background: $colour-background2;
-    border-radius: 20px;
-    margin-bottom: 24px;
-    font-weight: 500;
     display: flex;
     flex-direction: row;
     justify-content: left;
     align-items: center;
+    width: 336px;
+    height: 74px;
+    border-radius: 20px;
+    margin-bottom: 24px;
+    font-weight: 500;
+    background: $colour-background2;
 
     &--pink {
       background: lighten($colour-primary, 35%);
     }
 
     i {
-      padding: 0 18px 0 30px;
+      padding: 0 20px 0 10px;
     }
 
     &:nth-child(1) i {
@@ -128,56 +131,56 @@ a {
 
 
     .circle-num {
+      position: relative;
       width: $circle-diam;
       height: $circle-diam;
-      position: relative;
       left: ($circle-diam/2)*-1;
 
       .circle {
+        position: absolute;
+        z-index: 1;
+        border-radius: 50%;
         width: $circle-diam;
         height: $circle-diam;
         background-color: $colour-primary;
-        z-index: 4;
-        position: absolute;
-        border-radius: 50%;
       }
 
       .number {
-        color: $colour-background1;
-        z-index: 5;
-        position: absolute;
-        width: $circle-diam;
-        height: $circle-diam;
-        font-weight: 400;
-        font-size: 0.85rem;
         display: flex;
         justify-content: center;
         align-items: center;
+        position: absolute;
+        z-index: 1;
+        width: $circle-diam;
+        height: $circle-diam;
+        font-weight: 420;
+        font-size: 0.90rem;
+        color: $colour-background1;
       }
     }
   }
 }
 
 .restaurants {
-  background-color: $colour-background2;
-  padding: 1px 20px 40px 20px;
   display: flex;
   flex-direction: column;
+  padding: 5px 25px 45px 25px;
+  background-color: $colour-background2;
 
   .card {
-    width: 336px;
     display: flex;
     align-self: center;
-    margin-bottom: 30px;
-    overflow: hidden;
-    border-radius: 15px;
-    background-color: $colour-background1;
     position: relative;
+    overflow: hidden;
+    width: 340px;
+    margin-bottom: 35px;
+    border-radius: 20px;
+    background-color: $colour-background1;
 
     &__photo {
       position: relative;
       overflow: hidden;
-      height: 180px;
+      height: 184px;
 
       img {
         width: 100%;
@@ -185,8 +188,8 @@ a {
     }
 
     &-desc {
-      margin: 15px;
       position: relative;
+      margin: 15px;
 
       h3 {
         margin: 0;
@@ -201,12 +204,12 @@ a {
       }
 
       &__favorite {
-        position: absolute;
-        top: 0;
-        right: 0;
         display: flex;
+        position: absolute;
         align-items: center;
         justify-content: center;
+        top: 0;
+        right: 0;
         font-size: 1.5rem;
         height: 100%;
         width: 20%;
@@ -214,38 +217,99 @@ a {
     }
 
     &__label {
-      position: absolute;
-      width: 80px;
-      height: 30px;
-      background-color: $colour-tertiary;
       display: flex;
+      position: absolute;
       align-items: center;
       justify-content: center;
+      width: 80px;
+      height: 30px;
       font-weight: 500;
       font-size: 0.85rem;
-      color: darken($colour-tertiary, 40%);
       top: 15px;
       right: 15px;
+      color: darken($colour-tertiary, 50%);
+      background-color: $colour-tertiary;
     }
   }
 }
 
+.card-desc__favorite {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.coeur2 {
+  color: $colour-text1;
+
+  &:hover {
+      animation: grow-plus $duree-fav;
+      transition: transform $duree-fav ease;
+  }
+
+  &:hover + .coeur1 {
+      animation: grow $duree-fav;
+      transition: transform $duree-fav ease;
+      animation-fill-mode: forwards;
+  }
+}
+
+.coeur1 {
+  background: linear-gradient(15deg, $colour-secondary 17%, $colour-primary 91%);
+  transform: scale(0);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+@keyframes grow {
+  0% {
+      transform: scale(0);
+  }
+
+  90% {
+      transform: scale(1.3);
+  }
+
+  100% {
+      transform: scale(1);
+  }
+}
+
+@keyframes grow-plus {
+  0% {
+      transform: scale(1);
+  }
+
+  30% {
+      transform: scale(1);
+  }
+
+  90% {
+      transform: scale(1.3);
+  }
+
+  100% {
+      transform: scale(1);
+  }
+}
+
 footer {
-  background-color: $colour-background4;
-  color: $colour-background1;
   font-size: 1rem;
   font-weight: 300;
   padding: 25px;
   padding-bottom: 35px;
+  background-color: $colour-background4;
+  color: $colour-background1;
 
   .logo img {
-    width: 100px;
+    width: 95px;
     height: 20px;
     padding-bottom: 10px;
   }
 
   .footer-menu {
-    line-height: 27px;
+    line-height: 25px;
   }
 
   i {
@@ -261,8 +325,10 @@ footer a {
     text-decoration: none;
     color: $colour-background1;
   }
+
+  &:hover {
+    color: $colour-tertiary;
+  }
 }
 
-footer a:hover {
-  color: $colour-tertiary;
-}
+
