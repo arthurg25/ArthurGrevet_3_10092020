@@ -95,12 +95,31 @@ a {
   }
 }
 
+button {
+  font-weight: 400;
+  font-size: 1rem;
+  border: none;
+}
+
+.button1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 220px;
+  height: 50px;
+  color: $colour-text1;
+  border-radius: 30px;
+  background: linear-gradient(175deg, $colour-secondary 10%, $colour-primary 90%);
+  color: $colour-background1;
+}
+
 .operation-container {
-  background-color: $colour-background1;
-  margin: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: $colour-background1;
+  margin: 20px;
 
   .choice {
     width: 336px;
