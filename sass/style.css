@@ -312,6 +312,8 @@ a:visited, a:link, a:active {
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
+  position: absolute;
+  top: 11px;
 }
 
 @-webkit-keyframes grow {
