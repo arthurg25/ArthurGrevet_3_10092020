@@ -12,8 +12,14 @@ $colour-text1: #000;
 // cercle violet index
 $circle-diam:24px;
 
+// coeurs
 $duree-fav: 250ms;
 $heart-size: 24px;
+
+//page menu
+$distance: -45px;
+$duree-card: 1s;
+$anim-delay: $duree-card / 6;
 
 body {
   margin: auto;
@@ -262,14 +268,14 @@ button {
   color: $colour-text1;
 
   &:hover {
-      animation: grow-plus $duree-fav;
-      transition: transform $duree-fav ease;
+    animation: grow-plus $duree-fav;
+    transition: transform $duree-fav ease;
   }
 
   &:hover + .coeur1 {
-      animation: grow $duree-fav;
-      transition: transform $duree-fav ease;
-      animation-fill-mode: forwards;
+    animation: grow $duree-fav;
+    transition: transform $duree-fav ease;
+    animation-fill-mode: forwards;
   }
 }
 
@@ -289,29 +295,203 @@ button {
   }
 
   90% {
-      transform: scale(1.3);
+    transform: scale(1.3);
   }
 
   100% {
-      transform: scale(1);
+    transform: scale(1);
   }
 }
 
 @keyframes grow-plus {
   0% {
-      transform: scale(1);
+    transform: scale(1);
   }
 
   30% {
-      transform: scale(1);
+    transform: scale(1);
   }
 
   90% {
-      transform: scale(1.3);
+    transform: scale(1.3);
   }
 
   100% {
-      transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+.bg-image {
+  max-height: 270px;
+
+  img {
+    width: 100%;
+    margin-bottom: -50px;
+  }
+}
+
+.bt-back {
+  position: absolute;
+  height: 35px;
+  width: 35px;
+  margin: 12px;
+  font-size: 1.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0px solid $colour-background3;
+  border-radius: 50%;
+
+  &:hover {
+    border: 1px solid darken($colour-background3, 1%);
+  }
+}
+
+.menus {
+  background-color: $colour-background2;
+  border-radius: 42px 42px 0px 0px;
+  padding: 35px 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  .top-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    position: relative;
+
+  .card-desc__favorite {
+    font-size: 1.5rem;
+    color: $colour-text1;
+    padding-right: 20px;
+    margin-right: 15px;
+    }
+  }
+
+  .choix-plat {
+    margin-bottom: 32px;
+
+    .titre {
+      color: $colour-text1;
+      font-size: 1rem;
+      font-weight: 200;
+    }
+
+    .filet {
+      height: 3px;
+      width: 40px;
+      background-color: $colour-tertiary;
+      margin: 5px 0 12px 0;
+    }
+
+    .plat {
+      width: calc(100%-40px);
+      min-width: 350px;
+      background-color: $colour-background1;
+      border-radius: 15px;
+      padding: 12px;
+      padding-right: 25px;
+      position: relative;
+      margin-bottom: 12px;
+      overflow: hidden;
+      top: $distance*-1;
+      opacity: 0;
+      animation: move-card $duree-card cubic-bezier(0, 0, 0, 1) forwards;
+
+      &__nom {
+        font-size: 1.125rem;
+        font-weight: 500;
+        line-height: 1.8rem;
+      }
+
+      &__ligne2 {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      &__desc {
+        font-size: 1rem;
+        font-weight: 300;
+
+        transition-property: width;
+        transition-duration: 400ms;
+      }
+
+      &__prix {
+        font-size: 1rem;
+        font-weight: bold;
+        transition-duration: 400ms;
+      }
+
+      &__valid {
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transition-duration: 400ms;
+        transform: translateX(60px);
+
+        &__bg {
+          width: 60px;
+          height: 100%;
+          background: $colour-tertiary;
+        }
+
+        &__icon {
+          height: 100%;
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: absolute;
+          top: 0;
+          color: $colour-background1;
+          font-size: 1.3rem;
+
+          transform: rotate(360deg);
+          transition-duration: 400ms;
+        }
+      }
+    }
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0 50px 0;
+  }
+}
+
+.plat {
+  &:hover &__valid {
+    transform: translateX(0px);
+  }
+
+  &:hover &__valid__icon {
+    transform: rotate(0deg);
+  }
+
+  &:hover &__prix {
+    transform: translateX(-60px);
+  }
+
+  &:hover &__desc::after {
+    justify-content: space-between;
+  }
+
+}
+
+@keyframes move-card {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY($distance);
+    opacity: 1;
   }
 }
 
@@ -351,5 +531,3 @@ footer a {
     color: $colour-tertiary;
   }
 }
-
-
