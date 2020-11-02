@@ -9,6 +9,8 @@ $colour-background3: #EAEAEA;
 $colour-background4: #353535;
 $colour-text-primary: #000;
 
+$size: 200px;
+
 // cercle violet index
 $circle-diam:24px;
 
@@ -59,6 +61,61 @@ a {
     text-decoration: none;
     color: $colour-text-primary; 
   }
+}
+
+.spinner-container {
+  position: absolute;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 20;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: $colour-background4;
+
+    opacity: 1;
+    animation: loader-page 3s ease-in-out normal forwards;
+}
+.spinner {
+  position: absolute;
+  top: calc(50% - #{$size / 2});
+  left: calc(50% - #{$size / 2});
+  width: $size;
+  height: $size;
+  animation: spinner 0.75s linear infinite;
+
+  span {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+  
+  .spinner-inner-1 {
+    background: linear-gradient(to right, rgba($colour-primary,0) 0%,rgba($colour-primary,0) 50%,$colour-primary 51%);
+  }
+  
+  .spinner-inner-2 {
+    background: linear-gradient(to top, rgba($colour-background4,0) 0%,$colour-background4 100%);
+  }
+  
+  .spinner-inner-3 {
+    $offset: $size * 0.1;
+    top: $offset;
+    left: $offset;
+    width: $size - ($offset * 2);
+    height: $size - ($offset * 2);
+    background: $colour-background4;
+  }
+}
+
+@keyframes spinner {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 .header {
