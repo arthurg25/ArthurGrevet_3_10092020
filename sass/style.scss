@@ -7,7 +7,7 @@ $colour-background1: #FFF;
 $colour-background2: #F6F6F6;
 $colour-background3: #EAEAEA;
 $colour-background4: #353535;
-$colour-text1: #000;
+$colour-text-primary: #000;
 
 // cercle violet index
 $circle-diam:24px;
@@ -24,7 +24,7 @@ $anim-delay: $duree-card / 6;
 body {
   margin: auto;
   font-family: 'Roboto', sans-serif;
-  color: $colour-text1;
+  color: $colour-text-primary;
   font-size: 16px;
 }
 
@@ -40,12 +40,12 @@ h2 {
   font-weight: 600;
   font-size: 1.5rem;
   margin: 50px 0 30px 30px;
-  color: $colour-text1;
+  color: $colour-text-primary;
 }
 
 h4 {
   font-family: cursive;
-  color: $colour-text1;
+  color: $colour-text-primary;
   font-weight: 390;
   font-size: 1.75rem;
   margin: 0;
@@ -57,17 +57,18 @@ a {
   &:link,
   &:active {
     text-decoration: none;
-    color: $colour-text1; 
+    color: $colour-text-primary; 
   }
 }
 
-.container-header {
+.header {
   display: flex;
   position: relative;
   justify-items: center;
   width: 100%;
   height: 62px;
   background-color: $colour-background1;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.15);
 
   .logo-top {
     width: 170px;
@@ -82,7 +83,7 @@ a {
   font-size: 1rem;
   height: 50px;
   background-color: $colour-background3;
-  color: $colour-text1;
+  color: $colour-text-primary;
 
   i {
     margin-right: 10px;
@@ -104,23 +105,34 @@ a {
   }
 }
 
-button {
+a {
   font-weight: 400;
   font-size: 1rem;
   border: none;
+  p {
+    color: $colour-background1;
+  }
+
 }
 
-.button1 {
+.button-main {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   width: 220px;
   height: 50px;
-  color: $colour-text1;
+  color: $colour-text-primary;
   border-radius: 30px;
   background: linear-gradient(175deg, $colour-secondary 10%, $colour-primary 90%);
   color: $colour-background1;
+  box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.30);
+  transition: box-shadow 150ms linear, transform 150ms linear;
+
+  &:hover {
+    box-shadow: 0px 5px 8px 0px rgba(0, 0, 0, 0.30);
+    transform: scale(0.98);
+  }
 }
 
 .operation-container {
@@ -130,7 +142,7 @@ button {
   margin: 20px;
   background-color: $colour-background1;
 
-  .choice {
+  .box {
     display: flex;
     flex-direction: row;
     justify-content: left;
@@ -141,6 +153,7 @@ button {
     margin-bottom: 24px;
     font-weight: 500;
     background: $colour-background2;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.15);
 
     &--pink {
       background: lighten($colour-primary, 35%);
@@ -192,7 +205,7 @@ button {
   padding: 5px 25px 45px 25px;
   background-color: $colour-background2;
 
-  .card {
+  .page {
     display: flex;
     align-self: center;
     position: relative;
@@ -201,6 +214,7 @@ button {
     margin-bottom: 35px;
     border-radius: 20px;
     background-color: $colour-background1;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.15);
 
     &__photo {
       position: relative;
@@ -228,7 +242,7 @@ button {
         font-weight: 300;
       }
 
-      &__favorite {
+      &__heart {
         display: flex;
         position: absolute;
         align-items: center;
@@ -241,7 +255,7 @@ button {
       }
     }
 
-    &__label {
+    &__new {
       display: flex;
       position: absolute;
       align-items: center;
@@ -258,14 +272,14 @@ button {
   }
 }
 
-.card-desc__favorite {
+.page-desc__heart {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .coeur2 {
-  color: $colour-text1;
+  color: $colour-text-primary;
 
   &:hover {
     animation: grow-plus $duree-fav;
@@ -285,13 +299,18 @@ button {
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-  position: absolute;
-  top: 11px;
+}
+
+@for $i from 1 through 3 {
+  .coeur#{$i} {
+    position: absolute;
+    z-index: $i;
+  }
 }
 
 @keyframes grow {
   0% {
-      transform: scale(0);
+    transform: scale(0);
   }
 
   90% {
@@ -326,7 +345,6 @@ button {
 
   img {
     width: 100%;
-    margin-bottom: -50px;
   }
 }
 
@@ -362,9 +380,9 @@ button {
     margin-bottom: 30px;
     position: relative;
 
-  .card-desc__favorite {
+  .page-desc__heart {
     font-size: 1.5rem;
-    color: $colour-text1;
+    color: $colour-text-primary;
     padding-right: 20px;
     margin-right: 15px;
     }
@@ -374,7 +392,7 @@ button {
     margin-bottom: 32px;
 
     .titre {
-      color: $colour-text1;
+      color: $colour-text-primary;
       font-size: 1rem;
       font-weight: 200;
     }
@@ -399,6 +417,7 @@ button {
       top: $distance*-1;
       opacity: 0;
       animation: move-card $duree-card cubic-bezier(0, 0, 0, 1) forwards;
+      box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.15);
 
       &__nom {
         font-size: 1.125rem;
@@ -415,7 +434,6 @@ button {
       &__desc {
         font-size: 1rem;
         font-weight: 300;
-
         transition-property: width;
         transition-duration: 400ms;
       }
@@ -450,9 +468,8 @@ button {
           top: 0;
           color: $colour-background1;
           font-size: 1.3rem;
-
           transform: rotate(360deg);
-          transition-duration: 400ms;
+          transition-duration: 650ms;
         }
       }
     }

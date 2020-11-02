@@ -8,8 +8,9 @@
     <script src="https://kit.fontawesome.com/7cfecc5119.js" crossorigin="anonymous"></script>
 	</head>
 	<body>
+    
     <header>
-      <div class="container-header"><img class="logo-top" src="image/logo/logo.png" alt="logo ohmyfood"></div>
+      <div class="header"><img class="logo-top" src="image/logo/logo.png" alt="logo ohmyfood"></div>
     </header>
 
     <div class="localisation"><i class="fas fa-map-marker-alt"></i><span>Paris, Belleville</span></div>
@@ -18,27 +19,27 @@
       <div class="container">
         <h1>Réservez le menu qui vous convient</h1>
         <div>Découvrez des restaurants d'exception, sélectionnés par nos soins.</div>
-        <button class="button1">Explorer nos restaurants</button>
+        <a class="button-main" href="#restaurants"><p>Explorer nos restaurants</p></a>
       </div>
 
       <section>
         <h2>Fonctionnement</h2>
         <div class="operation-container">
-          <div class="choice">
+          <div class="box">
             <div class="circle-num">
               <div class="circle"></div>
               <div class="number">1</div>
             </div>
             <i class="fas fa-mobile-alt"></i>Choisissez un restaurant
           </div>
-          <div class="choice">
+          <div class="box">
             <div class="circle-num">
               <div class="circle"></div>
                 <div class="number">2</div>
               </div>
               <i class="fas fa-list-ul"></i>Composez votre menu
             </div>
-          <div class="choice choice--pink">
+          <div class="box box--pink">
             <div class="circle-num">
               <div class="circle"></div>
               <div class="number">3</div>
@@ -49,55 +50,61 @@
       </section>
 
       <section class="restaurants">
-        <h2>Restaurants</h2>
-        <article class="card">
+        <div id="restaurants">
+          <h2>Restaurants</h2>
+        </div>
+        <article class="page">
           <a href="page/menu-la_palette_du_gout.html">
-            <div class="card__photo"><img src="image/photo/pal.jpg" alt="Restaurant La palette du goût"></div>
-            <div class="card-desc">
-              <h3 class="card-desc__name">La palette du goût</h3>
-              <div class="card-desc__city">Ménilmontant</div>
-              <div class="card-desc__favorite">
+            <div class="page__photo"><img src="image/photo/pal.jpg" alt="Restaurant La palette du goût"></div>
+            <div class="page-desc">
+              <h3 class="page-desc__name">La palette du goût</h3>
+              <div class="page-desc__city">Ménilmontant</div>
+              <div class="page-desc__heart">
+              <!-- coeur2 = border, coeur1= backgroud -->
                 <i class="coeur2 far fa-heart"></i>
                 <i class="coeur1 fas fa-heart"></i>
               </div>
             </div>
-            <div class="card__label">Nouveau</div>
+            <div class="page__new">Nouveau</div>
           </a>
         </article>
-        <article class="card">
+        <article class="page">
           <a href="page/menu-la_note_enchantee.html">
-            <div class="card__photo"><img src="image/photo/note.jpg" alt="Restaurant La note enchantée"></div>
-            <div class="card-desc">
-              <h3 class="card-desc__name">La note enchantée</h3>
-              <div class="card-desc__city">Charonne</div>
-              <div class="card-desc__favorite">
+            <div class="page__photo"><img src="image/photo/note.jpg" alt="Restaurant La note enchantée"></div>
+            <div class="page-desc">
+              <h3 class="page-desc__name">La note enchantée</h3>
+              <div class="page-desc__city">Charonne</div>
+              <div class="page-desc__heart">
+               <!-- coeur2 = border, coeur1= backgroud -->
                 <i class="coeur2 far fa-heart"></i>
                 <i class="coeur1 fas fa-heart"></i>
               </div>
             </div>
-            <div class="card__label">Nouveau</div>
+            <div class="page__new">Nouveau</div>
           </a>
         </article>
-        <article class="card">
+        <article class="page">
           <a href="page/menu-a_la_francaise.html">
-            <div class="card__photo"><img src="image/photo/fran.jpg" alt="Restaurant À la française"></div>
-            <div class="card-desc">
-              <h3 class="card-desc__name">À la française</h3>
-              <div class="card-desc__city">Cité Rouge</div>
-              <div class="card-desc__favorite">
+            <div class="page__photo"><img src="image/photo/fran.jpg" alt="Restaurant À la française"></div>
+            <div class="page-desc">
+              <h3 class="page-desc__name">À la française</h3>
+              <div class="page-desc__city">Cité Rouge</div>
+              <div class="page-desc__heart">
+              <!-- coeur2 = border, coeur1= backgroud -->
                 <i class="coeur2 far fa-heart"></i>
                 <i class="coeur1 fas fa-heart"></i>
               </div>
             </div>
           </a>
         </article>
-        <article class="card">
+        <article class="page">
           <a href="page/menu-le_delice_des_sens.html">
-            <div class="card__photo"><img src="image/photo/deli.jpg" alt="Restaurant Le Délice des sens"></div>
-            <div class="card-desc">
-              <h3 class="card-desc__name">Le Délice des sens</h3>
-              <div class="card-desc__city">Folie-Méricourt</div>
-              <div class="card-desc__favorite">
+            <div class="page__photo"><img src="image/photo/deli.jpg" alt="Restaurant Le Délice des sens"></div>
+            <div class="page-desc">
+              <h3 class="page-desc__name">Le Délice des sens</h3>
+              <div class="page-desc__city">Folie-Méricourt</div>
+              <div class="page-desc__heart">
+              <!-- coeur2 = border, coeur1= backgroud -->
                 <i class="coeur2 far fa-heart"></i>
                 <i class="coeur1 fas fa-heart"></i>
               </div>
