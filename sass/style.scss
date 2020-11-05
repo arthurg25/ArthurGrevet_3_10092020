@@ -1,27 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900');
 
-$colour-primary: #9356DC;
-$colour-secondary: #FF79DA;
-$colour-tertiary: #99E2D0;
-$colour-background1: #FFF;
-$colour-background2: #F6F6F6;
-$colour-background3: #EAEAEA;
-$colour-background4: #353535;
-$colour-text-primary: #000;
-
-$size: 200px;
-
-// cercle violet index
-$circle-diam:24px;
-
-// coeurs
-$duree-fav: 250ms;
-$heart-size: 24px;
-
-//page menu
-$distance: -45px;
-$duree-card: 1s;
-$anim-delay: $duree-card / 6;
+@import "./variables/variables";
 
 body {
   margin: auto;
@@ -70,15 +49,14 @@ a {
     height: 100%;
     width: 100%;
     z-index: 20;
-
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     background: $colour-background4;
-
     opacity: 1;
     animation: loader-page 3s ease-in-out normal forwards;
+
 }
 .spinner {
   position: absolute;
@@ -87,6 +65,7 @@ a {
   width: $size;
   height: $size;
   animation: spinner 0.75s linear infinite;
+
 
   span {
     position: absolute;
@@ -116,6 +95,25 @@ a {
 @keyframes spinner {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+@keyframes loader-page {
+  0% {
+      opacity: 1;
+  }
+
+  75% {
+      opacity: 1;
+  }
+
+  99% {
+      opacity: 0;
+  }
+
+  100% {
+      opacity: 0;
+      visibility: hidden;
+  }
 }
 
 .header {
@@ -283,7 +281,7 @@ a {
       }
     }
 
-    &-desc {
+    &-set {
       position: relative;
       margin: 15px;
 
@@ -329,7 +327,7 @@ a {
   }
 }
 
-.page-desc__heart {
+.page-set__heart {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -397,7 +395,7 @@ a {
   }
 }
 
-.bg-image {
+.background-image {
   max-height: 270px;
 
   img {
@@ -405,7 +403,7 @@ a {
   }
 }
 
-.bt-back {
+.button-back {
   position: absolute;
   height: 35px;
   width: 35px;
@@ -437,7 +435,7 @@ a {
     margin-bottom: 30px;
     position: relative;
 
-  .page-desc__heart {
+  .page-set__heart {
     font-size: 1.5rem;
     color: $colour-text-primary;
     padding-right: 20px;
@@ -445,23 +443,23 @@ a {
     }
   }
 
-  .choix-plat {
+  .choice-dish {
     margin-bottom: 32px;
 
-    .titre {
+    .title {
       color: $colour-text-primary;
       font-size: 1rem;
       font-weight: 200;
     }
 
-    .filet {
+    .under-ligne {
       height: 3px;
       width: 40px;
       background-color: $colour-tertiary;
       margin: 5px 0 12px 0;
     }
 
-    .plat {
+    .dish {
       width: calc(100%-40px);
       min-width: 350px;
       background-color: $colour-background1;
@@ -476,7 +474,7 @@ a {
       animation: move-card $duree-card cubic-bezier(0, 0, 0, 1) forwards;
       box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.15);
 
-      &__nom {
+      &__name {
         font-size: 1.125rem;
         font-weight: 500;
         line-height: 1.8rem;
@@ -488,20 +486,20 @@ a {
         justify-content: space-between;
       }
 
-      &__desc {
+      &__set {
         font-size: 1rem;
         font-weight: 300;
         transition-property: width;
         transition-duration: 400ms;
       }
 
-      &__prix {
+      &__price {
         font-size: 1rem;
         font-weight: bold;
         transition-duration: 400ms;
       }
 
-      &__valid {
+      &__check {
         height: 100%;
         position: absolute;
         top: 0;
@@ -509,7 +507,7 @@ a {
         transition-duration: 400ms;
         transform: translateX(60px);
 
-        &__bg {
+        &__background {
           width: 60px;
           height: 100%;
           background: $colour-tertiary;
@@ -539,20 +537,20 @@ a {
   }
 }
 
-.plat {
-  &:hover &__valid {
+.dish {
+  &:hover &__check {
     transform: translateX(0px);
   }
 
-  &:hover &__valid__icon {
+  &:hover &__check__icon {
     transform: rotate(0deg);
   }
 
-  &:hover &__prix {
+  &:hover &__price {
     transform: translateX(-60px);
   }
 
-  &:hover &__desc::after {
+  &:hover &__set::after {
     justify-content: space-between;
   }
 

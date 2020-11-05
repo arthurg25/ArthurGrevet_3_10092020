@@ -118,6 +118,38 @@ a:visited, a:link, a:active {
   }
 }
 
+@-webkit-keyframes loader-page {
+  0% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes loader-page {
+  0% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
 .header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -344,24 +376,24 @@ a p {
   width: 100%;
 }
 
-.restaurants .page-desc {
+.restaurants .page-set {
   position: relative;
   margin: 15px;
 }
 
-.restaurants .page-desc h3 {
+.restaurants .page-set h3 {
   margin: 0;
 }
 
-.restaurants .page-desc__name {
+.restaurants .page-set__name {
   padding-bottom: 5px;
 }
 
-.restaurants .page-desc__city {
+.restaurants .page-set__city {
   font-weight: 300;
 }
 
-.restaurants .page-desc__heart {
+.restaurants .page-set__heart {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -400,7 +432,7 @@ a p {
   background-color: #99E2D0;
 }
 
-.page-desc__heart {
+.page-set__heart {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -528,15 +560,15 @@ a p {
   }
 }
 
-.bg-image {
+.background-image {
   max-height: 270px;
 }
 
-.bg-image img {
+.background-image img {
   width: 100%;
 }
 
-.bt-back {
+.button-back {
   position: absolute;
   height: 35px;
   width: 35px;
@@ -555,7 +587,7 @@ a p {
   border-radius: 50%;
 }
 
-.bt-back:hover {
+.button-back:hover {
   border: 1px solid #e7e7e7;
 }
 
@@ -588,31 +620,31 @@ a p {
   position: relative;
 }
 
-.menus .top-menu .page-desc__heart {
+.menus .top-menu .page-set__heart {
   font-size: 1.5rem;
   color: #000;
   padding-right: 20px;
   margin-right: 15px;
 }
 
-.menus .choix-plat {
+.menus .choice-dish {
   margin-bottom: 32px;
 }
 
-.menus .choix-plat .titre {
+.menus .choice-dish .title {
   color: #000;
   font-size: 1rem;
   font-weight: 200;
 }
 
-.menus .choix-plat .filet {
+.menus .choice-dish .under-ligne {
   height: 3px;
   width: 40px;
   background-color: #99E2D0;
   margin: 5px 0 12px 0;
 }
 
-.menus .choix-plat .plat {
+.menus .choice-dish .dish {
   width: calc(100%-40px);
   min-width: 350px;
   background-color: #FFF;
@@ -624,19 +656,19 @@ a p {
   overflow: hidden;
   top: 45px;
   opacity: 0;
-  -webkit-animation: move-card 1s cubic-bezier(0, 0, 0, 1) forwards;
-          animation: move-card 1s cubic-bezier(0, 0, 0, 1) forwards;
+  -webkit-animation: move-card 3s cubic-bezier(0, 0, 0, 1) forwards;
+          animation: move-card 3s cubic-bezier(0, 0, 0, 1) forwards;
   -webkit-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.15);
           box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.15);
 }
 
-.menus .choix-plat .plat__nom {
+.menus .choice-dish .dish__name {
   font-size: 1.125rem;
   font-weight: 500;
   line-height: 1.8rem;
 }
 
-.menus .choix-plat .plat__ligne2 {
+.menus .choice-dish .dish__ligne2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -649,7 +681,7 @@ a p {
           justify-content: space-between;
 }
 
-.menus .choix-plat .plat__desc {
+.menus .choice-dish .dish__set {
   font-size: 1rem;
   font-weight: 300;
   -webkit-transition-property: width;
@@ -658,14 +690,14 @@ a p {
           transition-duration: 400ms;
 }
 
-.menus .choix-plat .plat__prix {
+.menus .choice-dish .dish__price {
   font-size: 1rem;
   font-weight: bold;
   -webkit-transition-duration: 400ms;
           transition-duration: 400ms;
 }
 
-.menus .choix-plat .plat__valid {
+.menus .choice-dish .dish__check {
   height: 100%;
   position: absolute;
   top: 0;
@@ -676,13 +708,13 @@ a p {
           transform: translateX(60px);
 }
 
-.menus .choix-plat .plat__valid__bg {
+.menus .choice-dish .dish__check__background {
   width: 60px;
   height: 100%;
   background: #99E2D0;
 }
 
-.menus .choix-plat .plat__valid__icon {
+.menus .choice-dish .dish__check__icon {
   height: 100%;
   width: 100%;
   display: -webkit-box;
@@ -714,22 +746,22 @@ a p {
   margin: 10px 0 50px 0;
 }
 
-.plat:hover .plat__valid {
+.dish:hover .dish__check {
   -webkit-transform: translateX(0px);
           transform: translateX(0px);
 }
 
-.plat:hover .plat__valid__icon {
+.dish:hover .dish__check__icon {
   -webkit-transform: rotate(0deg);
           transform: rotate(0deg);
 }
 
-.plat:hover .plat__prix {
+.dish:hover .dish__price {
   -webkit-transform: translateX(-60px);
           transform: translateX(-60px);
 }
 
-.plat:hover .plat__desc::after {
+.dish:hover .dish__set::after {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
