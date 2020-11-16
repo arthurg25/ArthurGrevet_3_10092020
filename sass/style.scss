@@ -397,9 +397,11 @@ a {
 
 .background-image {
   max-height: 270px;
-
+  margin-bottom: -50px;
+  
   img {
     width: 100%;
+    max-height: 1000px;
   }
 }
 
@@ -461,23 +463,25 @@ a {
 
     .dish {
       width: calc(100%-40px);
-      min-width: 350px;
       background-color: $colour-background1;
       border-radius: 15px;
       padding: 12px;
       padding-right: 25px;
       position: relative;
       margin-bottom: 12px;
-      overflow: hidden;
       top: $distance*-1;
       opacity: 0;
       animation: move-card $duree-card cubic-bezier(0, 0, 0, 1) forwards;
       box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.15);
+      overflow: hidden;
 
       &__name {
         font-size: 1.125rem;
         font-weight: 500;
         line-height: 1.8rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
       }
 
       &__ligne2 {
@@ -491,6 +495,9 @@ a {
         font-weight: 300;
         transition-property: width;
         transition-duration: 400ms;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
       }
 
       &__price {
@@ -574,6 +581,8 @@ footer {
   padding-bottom: 35px;
   background-color: $colour-background4;
   color: $colour-background1;
+  order: 4;
+  position: relative;
 
   .logo img {
     width: 95px;
