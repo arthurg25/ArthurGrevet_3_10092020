@@ -27,7 +27,7 @@ h2 {
 h4 {
   font-family: cursive;
   color: $colour-text-primary;
-  font-weight: 390;
+  font-weight: 400;
   font-size: 1.75rem;
   margin: 0;
   text-align: left;
@@ -246,7 +246,7 @@ a {
         z-index: 1;
         width: $circle-diam;
         height: $circle-diam;
-        font-weight: 420;
+        font-weight: 400;
         font-size: 0.90rem;
         color: $colour-background1;
       }
@@ -351,7 +351,7 @@ a {
 .coeur1 {
   background: linear-gradient(15deg, $colour-secondary 17%, $colour-primary 91%);
   transform: scale(0);
-  background-clip: text;
+  background-clip: initial;
   -webkit-background-clip: text;
   color: transparent;
 }
@@ -462,7 +462,7 @@ a {
     }
 
     .dish {
-      width: calc(100%-40px);
+      width: calc(100% - 40px);
       background-color: $colour-background1;
       border-radius: 15px;
       padding: 12px;
@@ -472,7 +472,7 @@ a {
       top: $distance*-1;
       opacity: 0;
       animation: move-card $duree-card cubic-bezier(0, 0, 0, 1) forwards;
-      box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.15);
+      box-shadow: 0px 5px 10px 0px rgba(39, 37, 37, 0.15);
       overflow: hidden;
 
       &__name {
@@ -482,6 +482,7 @@ a {
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
+        z-index: 1;
       }
 
       &__ligne2 {
@@ -493,8 +494,6 @@ a {
       &__set {
         font-size: 1rem;
         font-weight: 300;
-        transition-property: width;
-        transition-duration: 400ms;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
@@ -530,7 +529,7 @@ a {
           top: 0;
           color: $colour-background1;
           font-size: 1.3rem;
-          transform: rotate(360deg);
+          transform: rotate(180deg);
           transition-duration: 650ms;
         }
       }
@@ -557,10 +556,13 @@ a {
     transform: translateX(-60px);
   }
 
-  &:hover &__set::after {
-    justify-content: space-between;
+  &:hover &__name{
+    width: 80%;
   }
 
+  &:hover &__set{
+    width: 65%;
+  }
 }
 
 @keyframes move-card {

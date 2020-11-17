@@ -24,7 +24,7 @@ h2 {
 h4 {
   font-family: cursive;
   color: #000;
-  font-weight: 390;
+  font-weight: 400;
   font-size: 1.75rem;
   margin: 0;
   text-align: left;
@@ -333,7 +333,7 @@ a p {
   z-index: 1;
   width: 24px;
   height: 24px;
-  font-weight: 420;
+  font-weight: 400;
   font-size: 0.90rem;
   color: #FFF;
 }
@@ -472,7 +472,7 @@ a p {
   background: linear-gradient(15deg, #FF79DA 17%, #9356DC 91%);
   -webkit-transform: scale(0);
           transform: scale(0);
-  background-clip: text;
+  background-clip: initial;
   -webkit-background-clip: text;
   color: transparent;
 }
@@ -647,7 +647,7 @@ a p {
 }
 
 .menus .choice-dish .dish {
-  width: calc(100%-40px);
+  width: calc(100% - 40px);
   background-color: #FFF;
   border-radius: 15px;
   padding: 12px;
@@ -658,8 +658,8 @@ a p {
   opacity: 0;
   -webkit-animation: move-card 3s cubic-bezier(0, 0, 0, 1) forwards;
           animation: move-card 3s cubic-bezier(0, 0, 0, 1) forwards;
-  -webkit-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.15);
-          box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0px 5px 10px 0px rgba(39, 37, 37, 0.15);
+          box-shadow: 0px 5px 10px 0px rgba(39, 37, 37, 0.15);
   overflow: hidden;
 }
 
@@ -670,6 +670,7 @@ a p {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  z-index: 1;
 }
 
 .menus .choice-dish .dish__ligne2 {
@@ -688,10 +689,6 @@ a p {
 .menus .choice-dish .dish__set {
   font-size: 1rem;
   font-weight: 300;
-  -webkit-transition-property: width;
-  transition-property: width;
-  -webkit-transition-duration: 400ms;
-          transition-duration: 400ms;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -737,8 +734,8 @@ a p {
   top: 0;
   color: #FFF;
   font-size: 1.3rem;
-  -webkit-transform: rotate(360deg);
-          transform: rotate(360deg);
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
   -webkit-transition-duration: 650ms;
           transition-duration: 650ms;
 }
@@ -768,10 +765,12 @@ a p {
           transform: translateX(-60px);
 }
 
-.dish:hover .dish__set::after {
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+.dish:hover .dish__name {
+  width: 80%;
+}
+
+.dish:hover .dish__set {
+  width: 65%;
 }
 
 @-webkit-keyframes move-card {
