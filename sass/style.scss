@@ -58,6 +58,7 @@ a {
     animation: loader-page 3s ease-in-out normal forwards;
 
 }
+
 .spinner {
   position: absolute;
   top: calc(50% - #{$size / 2});
@@ -65,7 +66,6 @@ a {
   width: $size;
   height: $size;
   animation: spinner 0.75s linear infinite;
-
 
   span {
     position: absolute;
@@ -99,20 +99,20 @@ a {
 
 @keyframes loader-page {
   0% {
-      opacity: 1;
+    opacity: 1;
   }
 
   75% {
-      opacity: 1;
+    opacity: 1;
   }
 
   99% {
-      opacity: 0;
+    opacity: 0;
   }
 
   100% {
-      opacity: 0;
-      visibility: hidden;
+    opacity: 0;
+    visibility: hidden;
   }
 }
 
@@ -152,7 +152,7 @@ a {
   padding: 40px;
   background-color: $colour-background2;
 
-  > div {
+   div {
     text-align: center;
     font-weight: 300;
     font-size: 1.125rem;
@@ -167,7 +167,6 @@ a {
   p {
     color: $colour-background1;
   }
-
 }
 
 .button-main {
@@ -217,11 +216,6 @@ a {
     i {
       padding: 0 20px 0 10px;
     }
-
-    &:nth-child(1) i {
-      font-size: 1.2rem;
-    }
-
 
     .circle-num {
       position: relative;
@@ -327,12 +321,6 @@ a {
   }
 }
 
-.page-set__heart {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .coeur2 {
   color: $colour-text-primary;
 
@@ -356,7 +344,7 @@ a {
   color: transparent;
 }
 
-@for $i from 1 through 3 {
+@for $i from 1 through 2 {
   .coeur#{$i} {
     position: absolute;
     z-index: $i;
