@@ -642,6 +642,56 @@ a p {
   overflow: hidden;
 }
 
+.menus .choice-dish .dish--1 {
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+
+.menus .choice-dish .dish--2 {
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+.menus .choice-dish .dish--3 {
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
+}
+
+.menus .choice-dish .dish--4 {
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+
+.menus .choice-dish .dish--5 {
+  -webkit-animation-delay: 2.5s;
+          animation-delay: 2.5s;
+}
+
+.menus .choice-dish .dish--6 {
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+}
+
+.menus .choice-dish .dish--7 {
+  -webkit-animation-delay: 3.5s;
+          animation-delay: 3.5s;
+}
+
+.menus .choice-dish .dish--8 {
+  -webkit-animation-delay: 4s;
+          animation-delay: 4s;
+}
+
+.menus .choice-dish .dish--9 {
+  -webkit-animation-delay: 4.5s;
+          animation-delay: 4.5s;
+}
+
+.menus .choice-dish .dish--10 {
+  -webkit-animation-delay: 5s;
+          animation-delay: 5s;
+}
+
 .menus .choice-dish .dish__name {
   font-size: 1.125rem;
   font-weight: 500;
